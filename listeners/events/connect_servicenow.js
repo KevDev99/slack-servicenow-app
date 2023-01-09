@@ -42,7 +42,8 @@ const connectServiceNow = async ({ body, client, logger, ack }) => {
 
       // refresh home tab
 
-      const blocks = connectedInstanceBody(body.user.id, {
+      const blocks = await connectedInstanceBody(body.user.id, {
+        team: { id: body.team.id },
         servicenow: {
           instance_url: instanceUrl,
           client_id: state.client_id,
