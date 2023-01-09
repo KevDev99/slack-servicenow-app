@@ -42,7 +42,13 @@ const connectServiceNow = async ({ body, client, logger, ack }) => {
 
       // refresh home tab
 
-      const blocks = connectedInstanceBody(body.user.id, instanceUrl);
+      const blocks = connectedInstanceBody(body.user.id, {
+        servicenow: {
+          instance_url: instanceUrl,
+          client_id: state.client_id,
+          client_secret: state.client_secret,
+        },
+      });
       await client.views.publish({
         // Use the user ID associated with the event
         user_id: body.user.id,

@@ -21,7 +21,7 @@ const installationSchema = mongoose.Schema(
       client_secret: String,
     },
   },
-  { _id: false }
+  { _id: false, timestamps: true }
 );
 
 module.exports = {

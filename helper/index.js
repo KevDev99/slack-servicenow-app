@@ -130,6 +130,8 @@ function getTimestampInSeconds(date, minutes = 0) {
   return Math.floor(timestampDate / 1000);
 }
 
+
+
 module.exports = {
   formatState,
   formatMessageState,
