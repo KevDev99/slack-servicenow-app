@@ -10,8 +10,8 @@ const snowAuthRedirect = (receiver) => {
   receiver.router.get("/snow_oauth_redirect", async (req, res) => {
     try {
       res.writeHead(200);
-      const code = req.param("code");
-      const state = req.param("state");
+      const code = req.params["code"];
+      const state = req.params["state"];
 
       const [userId, teamId] = state.split("-");
 
